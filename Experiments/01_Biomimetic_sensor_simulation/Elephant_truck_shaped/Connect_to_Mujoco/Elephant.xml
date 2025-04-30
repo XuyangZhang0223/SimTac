@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco>
+    <asset>
+        <mesh file="stls/fixed_ring.STL" name="fixed_ring" scale="0.001 0.001 0.001"/>
+        <mesh file="stls/Membrane.STL" name="Membrane" scale="0.001 0.001 0.001"/>
+        <mesh file="stls/Mid_layer.STL" name="Mid_layer" scale="0.001 0.001 0.001"/>
+        <mesh file="stls/Upper_layer.STL" name="Upper_layer" scale="0.001 0.001 0.001"/>
+        <mesh file="stls/Cube_1.STL" name="Cube_1" scale="0.001 0.001 0.001"/>
+        <mesh file="stls/Cube_2.STL" name="Cube_2" scale="0.001 0.001 0.001"/>
+        <mesh file="stls/Cylinder.STL" name="Cylinder" scale="0.001 0.001 0.001"/>
+        <mesh file="stls/Cylinder_texture.STL" name="Cylinder_texture" scale="0.001 0.001 0.001"/>
+        <mesh file="stls/Ellipsoid.STL" name="Ellipsoid" scale="0.001 0.001 0.001"/>
+        <texture type="skybox" builtin="gradient" rgb1="1 1 1" rgb2="1 1 1" width="512" height="3072"/>
+    </asset>
+    <worldbody>
+
+        <!-- probe -->
+        <body name="probe" pos="0 0 0" euler="0 0 0">
+            <geom type="mesh" mesh="Cylinder_texture" name="object_geom" rgba="1 1 1 1"/>
+            <joint name="slide0" axis="0 0 1" damping="0" pos="0 0 0" type="slide"/>
+            <joint name="slide1" axis="0 1 0" damping="0" pos="0 0 0" type="slide"/>
+            <joint name="slide2" axis="1 0 0" damping="0" pos="0 0 0" type="slide"/>
+        </body>
+
+        <!-- back case, front case, glass, and gel -->
+        <body name="fixed_ring" pos="0 0 0" euler="0 0 0">
+            <geom type="mesh" mesh="fixed_ring" name="fixed_ring" rgba="0.25098 0.25098 0.25098 1"/>
+            <body name="Membrane" pos="0 0 0">
+                <geom type="mesh" mesh="Membrane" name="Membrane" rgba="0.82353 0.82353 1 1"/>
+                            <body name="Mid_layer" pos="0 0 0">
+                <geom type="mesh" mesh="Mid_layer" name="Mid_layer" rgba="0.25098 0.25098 0.25098 1"/>
+                            <body name="Upper_layer" pos="0 0 0">
+                <geom type="mesh" mesh="Upper_layer" name="Upper_layer" rgba="0.25098 0.25098 0.25098 1"/>
+
+                    </body>
+                </body>
+            </body>
+            </body>
+
+
+        <!-- Camera definition -->
+        <camera name="main_camera" pos="-0.2 0 0" zaxis="-1 0 0" fovy="50"/>
+
+    </worldbody>
+    <actuator>
+        <velocity joint="slide0"/>
+        <velocity joint="slide1"/>
+        <velocity joint="slide2"/>
+    </actuator>
+    <contact>
+        <exclude body1="probe" body2="Membrane"/>
+    </contact>
+    <option timestep="0.0001">
+        <flag gravity="disable"/>
+    </option>
+</mujoco>

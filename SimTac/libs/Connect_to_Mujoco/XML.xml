@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mujoco>
+	<asset>
+	  <texture type="skybox" builtin="gradient" rgb1="1 1 1" rgb2="1 1 1" width="512" height="3072"/>
+		<mesh file="STL/Back shell.stl" name="Back shell" scale="0.001 0.001 0.001"></mesh>
+		<mesh file="STL/Base.stl" name="Base" scale="0.001 0.001 0.001"></mesh>
+    <mesh file="STL/GelTip elastomer.stl" name="GelTip elastomer" scale="0.001 0.001 0.001"></mesh>
+    <mesh file="STL/Shell.stl" name="Shell" scale="0.001 0.001 0.001"></mesh>
+    <mesh file="STL/Transparent tube.stl" name="Transparent tube" scale="0.001 0.001 0.001"></mesh>
+    
+    
+    <mesh file="STL/Cube.stl" name="Cube" scale="0.001 0.001 0.001"></mesh>
+    <mesh file="STL/X.stl" name="X" scale="0.001 0.001 0.001"></mesh>
+    <mesh file="STL/Triangle.stl" name="Triangle" scale="0.001 0.001 0.001"></mesh>
+    <mesh file="STL/Sphere_R27.stl" name="Sphere_R27" scale="0.001 0.001 0.001"></mesh>
+    <mesh file="STL/Pacman.stl" name="Pacman" scale="0.001 0.001 0.001"></mesh>
+    <mesh file="STL/Hexagon.stl" name="Hexagon" scale="0.001 0.001 0.001"></mesh>
+    <mesh file="STL/Fllower.stl" name="Fllower" scale="0.001 0.001 0.001"></mesh>
+    <mesh file="STL/Ellipsoid_circle.stl" name="Ellipsoid_circle" scale="0.001 0.001 0.001"></mesh>
+    <mesh file="STL/Ellipsoid.stl" name="Ellipsoid" scale="0.001 0.001 0.001"></mesh>
+    <mesh file="STL/Double_cylinder_side.stl" name="Double_cylinder_side" scale="0.001 0.001 0.001"></mesh>
+    <mesh file="STL/Cylinder.stl" name="Cylinder" scale="0.001 0.001 0.001"></mesh>
+    <mesh file="STL/Sphere.stl" name="Sphere" scale="0.001 0.001 0.001"></mesh>
+    <mesh file="STL/Diamond.stl" name="Diamond" scale="0.001 0.001 0.001"></mesh>
+    <mesh file="STL/Cylinder_side.stl" name="Cylinder_side" scale="0.001 0.001 0.001"></mesh>
+    <mesh file="STL/Indenter Connector 2.stl" name="Indenter Connector 2" scale="0.001 0.001 0.001"></mesh>
+		<mesh file="STL/Indenter Connector.stl" name="Indenter Connector" scale="0.001 0.001 0.001"></mesh>
+    <mesh file="STL/Nano 17.stl" name="Nano 17" scale="0.001 0.001 0.001"></mesh>
+    <mesh file="STL/NANO Connector.stl" name="NANO Connector" scale="0.001 0.001 0.001"></mesh>
+  
+
+	</asset>
+	<worldbody>
+	 <camera name="main_camera" pos="0 0 0.5" euler="0 -30 0" fovy="45"/>
+
+<!-- indenter -->
+		<body name="indenter" pos="-0.008 0.0 0.0" euler="0 -90 0">
+			<geom type="mesh" mesh="Cylinder" name="object_geom" rgba="1 1 1 1"></geom>
+			<geom type="mesh" mesh="Indenter Connector 2" name="Indenter Connector 2_geom" rgba="1 1 1 1"></geom>
+			<geom type="mesh" mesh="Indenter Connector" name="Indenter Connector_geom" rgba="1 1 1 1"></geom>
+			<geom type="mesh" mesh="Nano 17" name="Nano 17_geom" rgba="1 1 1 1"></geom>
+			<geom type="mesh" mesh="NANO Connector" name="NANO Connector_geom" rgba="1 1 1 1"></geom>
+			<joint name="slide0" axis="0 0 1" damping="0"  pos="0 0 0" type="slide"/>
+			<joint name="slide1" axis="0 1 0" damping="0"  pos="0 0 0" type="slide"/>
+			<joint name="slide2" axis="1 0 0" damping="0"  pos="0 0 0" type="slide"/>
+
+		</body>
+		
+
+<!-- sensor-->
+		<body name="Base" pos="0 0 0" euler="0 0 0" >
+			<geom type="mesh" mesh="Base" name="Base_geom" rgba="0.82353 0.82353 1 1"></geom>
+			<body name="Shell" pos="0 0 0" >
+				<geom type="mesh" mesh="Shell" name="Shell_geom" rgba="0.25098 0.25098 0.25098 1"></geom>
+				<body name="Back shell" pos="0 0 0">
+          <geom type="mesh" mesh="Back shell" name="Back shell_geom" rgba="0.25098 0.25098 0.25098 1"></geom>
+          <body name="GelTip elastomer" pos="0 0 0">
+            <geom type="mesh" mesh="GelTip elastomer" name="GelTip elastomer_geom" rgba ="0.823529 0.823529 1 1" ></geom>
+            <body name="Transparent tube" pos="0 0 0">
+              <geom type="mesh" mesh="Transparent tube" name="Transparent tube_geom" rgba ="0.823529 0.823529 1 1" ></geom>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+
+
+	</worldbody>
+	<actuator>
+        <velocity joint="slide0"/>
+        <velocity joint="slide1"/>
+        <velocity joint="slide2"/>
+    </actuator>
+    <contact>
+    	<exclude body1 = "indenter" body2 = "GelTip elastomer"></exclude>
+    </contact>
+    <option timestep = "0.0001">
+    	<flag gravity = "disable" ></flag>
+    </option>
+    
+
+</mujoco>

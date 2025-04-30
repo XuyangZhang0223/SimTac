@@ -1,0 +1,100 @@
+<mujoco>
+            <visual>
+                
+                <map znear="0.001" zfar="50" />
+            </visual>
+
+            <asset>
+                <texture name="#1:texplane" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 0.15 0.2" width="512" height="512" mark="cross" markrgb=".8 .8 .8" />    
+                <material name="#1:matplane" reflectance="0.3" texture="#1:texplane" texrepeat="1 1" texuniform="true" />
+
+                
+                <texture name="#1:grid" type="2d" builtin="checker" width="512" height="512" rgb2="0 0 0" rgb1="1 1 1" />
+                <material name="#1:grid" texture="#1:grid" texrepeat="2 2" texuniform="true" reflectance=".6" />
+                <hfield name="#1:terrain" file="/home/xuyang/PhD/Project/Taichi/Code/TacMorph/Rendering_Phong_model/heightmap.png" size="0.01 0.01 0.001 0.01" />
+                <mesh name="#1:mymesh" file="/home/xuyang/PhD/Project/Taichi/Code/TacMorph/Rendering_Phong_model/geltip_dataset/object_model/cone.stl" scale="0.001 0.001 0.001" />
+
+            <material name="geltip1#2:glass_material" rgba="1 1 1 0.1" />
+                <material name="geltip1#2:white_elastomer" rgba="0.8 0.8 0.8 1" />
+                <material name="geltip1#2:black_plastic" rgba="1 1 1 1" />
+                
+                <material name="geltip1#2:label_color" rgba="0 0 1 1.0" />
+        
+                <mesh name="geltip1#2:geltip_shell" file="/home/xuyang/PhD/Project/Taichi/Code/TacMorph/Rendering_Phong_model/experimental_setup/geltip/meshes_new/shell.stl" scale="0.001 0.001 0.001" />
+                <mesh name="geltip1#2:geltip_base" file="/home/xuyang/PhD/Project/Taichi/Code/TacMorph/Rendering_Phong_model/experimental_setup/geltip/meshes_new/base.stl" scale="0.001 0.001 0.001" />
+            
+                
+                <mesh name="geltip1#2:geltip_glass" file="/home/xuyang/PhD/Project/Taichi/Code/TacMorph/Rendering_Phong_model/experimental_setup/geltip/meshes_new/tube.stl" scale="0.001 0.001 0.001" />
+                
+                
+                <mesh name="geltip1#2:geltip_elastomer" file="/home/xuyang/PhD/Project/Taichi/Code/TacMorph/Rendering_Phong_model/experimental_setup/geltip/meshes_new/elastomer.stl" scale="0.001 0.001 0.001" />  
+                
+                
+                
+                <mesh name="geltip1#2:geltip_elastomer_inv" file="/home/xuyang/PhD/Project/Taichi/Code/TacMorph/Rendering_Phong_model/experimental_setup/geltip/meshes_new/elastomer_shell.stl" scale="0.001 0.001 0.001" />
+        
+            </asset>
+            <worldbody>
+                <light directional="true" diffuse=".4 .4 .4" specular="0.1 0.1 0.1" pos="0 0 5.0" dir="0 0 -1" />
+                <light directional="true" diffuse=".6 .6 .6" specular="0.2 0.2 0.2" pos="0 0 4" dir="0 0 -1" />
+
+                <body name="#1:floor">
+                    <geom name="#1:ground" type="plane" size="0 0 1" pos="0 0 0" quat="1 0 0 0" material="#1:matplane" condim="1" />
+                </body>
+                
+                
+                
+               
+
+               
+
+                
+
+                <body pos="0.0 0.0 0.0" xyaxes="-1 0 0 0 0 1">
+                    <body name="geltip1#2:geltip">
+                    
+                    <geom density="0.1" type="mesh" mesh="geltip1#2:geltip_shell" material="geltip1#2:black_plastic" pos="-0.03574064 -0.0001959 -0.00019592" />
+                    <geom density="0.1" type="mesh" mesh="geltip1#2:geltip_base" material="geltip1#2:black_plastic" pos="-0.03574064 -0.0001959 -0.00019592" />
+                    <camera name="geltip1#2:camera" pos="0 -0.01 0.0051" zaxis="0 0 -1" fovy="120" />
+              
+                    <body>
+                    
+                       
+                       
+                              
+                       
+                       
+                            
+                         
+                       
+                       
+                       <geom density="0.1" type="mesh" mesh="geltip1#2:geltip_elastomer" friction="1 0.05 0.01" contype="32" conaffinity="32" material="geltip1#2:white_elastomer" pos="-0.03574064 -0.0001959 -0.00019592" /> 
+                    </body>
+        
+                </body>
+            </body>
+
+
+                <body pos="0.0 0.0 0.0" xyaxes="1 0 0 0 0 1">
+                    <geom type="mesh" mesh="#1:mymesh" material="#1:matplane" />
+                </body>
+
+                
+
+
+
+
+
+
+
+
+                
+               
+
+                
+
+
+
+
+            </worldbody>        
+        </mujoco>

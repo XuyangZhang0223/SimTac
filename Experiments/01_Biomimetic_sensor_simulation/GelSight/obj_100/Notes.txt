@@ -1,0 +1,2 @@
+For sharp objects, the dimension in Z axis is from 15 mm to 18mm.
+For other objects, the dimension is from 18 mm to 20 mm.

@@ -1,0 +1,14 @@
+{
+    "Cube": 0,
+    "Cylinder": 1,
+    "Cylinder_side": 2,
+    "Diamond": 3,
+    "Double_cylinder_side": 4,
+    "Ellipsoid": 5,
+    "Flower": 6,
+    "Hexagon": 7,
+    "Packman": 8,
+    "Sphere": 9,
+    "Triangle": 10,
+    "X": 11
+}

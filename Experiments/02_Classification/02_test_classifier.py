@@ -14,6 +14,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 import random
+import json
 
 class ImgAugTransform:
     def __init__(self, augmenter):
@@ -25,16 +26,18 @@ class ImgAugTransform:
         return F.to_pil_image(img)
 
 class Mydatasets(torch.utils.data.Dataset):
-    def __init__(self, root, transform=None):
+    def __init__(self, root, class_list_path="class_names.json", transform=None):
         self.root = root
-        self.classes = [d for d in os.listdir(root) if os.path.isdir(os.path.join(root, d))] 
+        with open(class_list_path, "r") as f:
+            self.classes = json.load(f)  
         self.imgs = []
         self.labels = []
         self.transform = transform
-        print('class order: ', self.classes)
+        print('class order (from json): ', self.classes)
 
         for class_idx, class_name in enumerate(self.classes):
             class_dir = os.path.join(root, class_name)
+            if not os.path.exists(class_dir): continue
             for img_name in os.listdir(class_dir):
                 img_path = os.path.join(class_dir, img_name)
                 self.imgs.append(img_path)
@@ -72,43 +75,49 @@ def test_model(model, test_loader, device):
     accuracy = 100 * correct / total
     print('Test Accuracy: {:.2f}%'.format(accuracy))
 
-    # Calculate confusion matrix
     cm = confusion_matrix(all_labels, all_preds)
+    class_names = test_loader.dataset.classes
+    class_names = [name.replace("Double_cylinder_side", "Double_side") for name in class_names]
 
-    # Plot confusion matrix
     plt.figure(figsize=(10, 8))
-    sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=test_loader.dataset.classes, yticklabels=test_loader.dataset.classes)
-    plt.xlabel("Predicted Labels")
-    plt.ylabel("True Labels")
-    plt.title("Confusion Matrix")
-    plt.xticks(rotation=45)
-    plt.yticks(rotation=45)
+    sns.heatmap(
+        cm,
+        annot=True,
+        fmt="d",
+        cmap="Blues",
+        xticklabels=class_names,
+        yticklabels=class_names,
+        annot_kws={"size": 17},
+        cbar_kws={"shrink": 1, "format": "%d"},
+        cbar=False
+    )
+    plt.xlabel("Predicted Labels", fontsize=16)
+    plt.ylabel("True Labels", fontsize=16)
+    plt.title("Confusion Matrix", fontsize=18)
+    plt.xticks(rotation=45, fontsize=14)
+    plt.yticks(rotation=45, fontsize=14)
     plt.tight_layout()
-    plt.savefig('Confusion Matrix_sim2sim.svg')
+    plt.savefig('Confusion_Matrix_sim2sim.svg')
     plt.show()
 
 def main():
-    # Load the saved model
     saved_model_path = "final_model.pt"
     model = models.resnet50(pretrained=True)
     num_ftrs = model.fc.in_features
-    model.fc = nn.Linear(num_ftrs, 12)  
+    model.fc = nn.Linear(num_ftrs, 12)
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model.load_state_dict(torch.load(saved_model_path, map_location=device))
     model.to(device)
 
-    # Define transformations for test data
     transform = T.Compose([
         T.Resize(224),
         T.ToTensor()
     ])
 
-    # Create test dataset and loader
-    test_dataset = Mydatasets('tactile_data/sim_test', transform=transform)
+    test_dataset = Mydatasets('tactile_data/sim_test', class_list_path="class_names.json", transform=transform)
     test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False)
 
-    # Test the model
     test_model(model, test_loader, device)
 
 if __name__ == "__main__":

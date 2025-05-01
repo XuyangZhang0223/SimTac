@@ -65,7 +65,7 @@ File path: ./Experiments/03_Slip_Detection
 
 ### 5. Sim2Real task 3 - contact safety assessment
 File path: ./Experiments/04_Contact_Safety_Assessment
-- For *model training*, ```Run ./01_train_regressor.py ``
+- For *model training*, ```Run ./01_train_regressor.py ```
 - For *model testing*, ```Run ./02_test_regressor.py ```
 
 ### 6. Force Prediction Model

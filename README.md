@@ -71,31 +71,64 @@ python SimTac_THUMB.py```
 - For *DigiTac sensor*,
 ```
 cd Experiments/01_Biomimetic_sensor_simulation/DigiTac
-python SimTac_DIGITAC.py```
+python SimTac_DIGITAC.py
+```
 - For *GelSignt sensor*,
 ```
 cd Experiments/01_Biomimetic_sensor_simulation/GelSight
 python SimTac_Gelsight.py
 ```
 ### 3. Sim2Real task 1 - contact object classification
-File path: ./Experiments/02_Classification
-- For *model training*, ```Run ./01_train_classifier.py ```
-- For *model testingtest*, ```Run ./02_test_classifier.py ```
+- For *model training*,
+```
+cd Experiments/02_Classification
+python 01_train_classifier.py 
+```
+- For *model testingtest*,
+```
+cd Experiments/02_Classification
+python 02_test_classifier.py 
+```
 
 ### 4. Sim2Real task 2 - slip detection
-File path: ./Experiments/03_Slip_Detection
-- For *model training*, ```Run ./01_train_net.py ```
-- For *model testing*, ```Run ./02_test_net.py ```
+- For *model training*,
+```
+cd Experiments/03_Slip_Detection
+python 01_train_net.py 
+```
+
+- For *model testing*,
+```
+cd Experiments/03_Slip_Detection
+python 02_test_net.py 
+```
 
 ### 5. Sim2Real task 3 - contact safety assessment
-File path: ./Experiments/04_Contact_Safety_Assessment
-- For *model training*, ```Run ./01_train_regressor.py ```
-- For *model testing*, ```Run ./02_test_regressor.py ```
+- For *model training*,
+```
+cd Experiments/04_Contact_Safety_Assessment
+python 01_train_regressor.py 
+```
+
+- For *model testing*,
+```
+cd Experiments/04_Contact_Safety_Assessment
+python 02_test_regressor.py 
+```
 
 ### 6. Force Prediction Model
-File path: ./Experiments/05_STN_Training_and_Fine_tuning
-- For *model training*, ```Run ./Train_Displacement.py or Train_Force.py ```
-- For *model testing*, ```Run ./Test_Displacement.py or Test_Force.py ```
+- For *model training*,
+```
+cd Experiments/05_STN_Training_and_Fine_tuning
+python Train_Displacement.py 
+python Train_Force.py 
+```
+- For *model testing*,
+```
+cd Experiments/05_STN_Training_and_Fine_tuning 
+python Test_Displacement.py
+python Test_Force.py 
+```
 
 ## Citation
 

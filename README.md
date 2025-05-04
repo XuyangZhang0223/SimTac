@@ -32,9 +32,21 @@ python setup.py install --blas_include_dirs=${CONDA_PREFIX}/include --blas=openb
 
 ## Quick Start
 ### 1. Simulation of a human-finger-shaped GelTip sensor 
-- For simulation of contact with *indenters*, ```Run SimTac/SimTac_GelTip_indenter.py```
-- For simulation of contact with *textures*, ```Run SimTac/SimTac_GelTip_texture.py```
-- For simulation of contact with *YCB objects*, ```Run SimTac/SimTac_GelTip_YCB.py```
+- For simulation of contact with *indenters*,
+```
+cd SimTac
+python SimTac_GelTip_indenter.py
+```
+- For simulation of contact with *textures*,
+```
+cd SimTac
+python SimTac_GelTip_texture.py
+```
+- For simulation of contact with *YCB objects*,
+```
+cd SimTac
+python SimTac_GelTip_YCB.py
+```
 
 ### 2. Simulation of other biomorphic-shaped tactile sensors
 File path: ./Experiments/01_Biomimetic_sensor_simulation/..

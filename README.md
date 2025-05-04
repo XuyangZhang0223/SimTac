@@ -67,12 +67,14 @@ python SimTac_Elephant_Truck.py
 - For *human-thumb-shaped sensor*,
 ```
 cd Experiments/01_Biomimetic_sensor_simulation/Thumb_shaped
-python SimTac_THUMB.py```
+python SimTac_THUMB.py
+```
 - For *DigiTac sensor*,
 ```
 cd Experiments/01_Biomimetic_sensor_simulation/DigiTac
 python SimTac_DIGITAC.py
 ```
+
 - For *GelSignt sensor*,
 ```
 cd Experiments/01_Biomimetic_sensor_simulation/GelSight

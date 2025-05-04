@@ -123,6 +123,7 @@ cd Experiments/05_STN_Training_and_Fine_tuning
 python Train_Displacement.py 
 python Train_Force.py 
 ```
+
 - For *model testing*,
 ```
 cd Experiments/05_STN_Training_and_Fine_tuning 

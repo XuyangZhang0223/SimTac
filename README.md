@@ -49,25 +49,34 @@ python SimTac_GelTip_YCB.py
 ```
 
 ### 2. Simulation of other biomorphic-shaped tactile sensors
-File path: ./Experiments/01_Biomimetic_sensor_simulation/..
-
 - For *cat-paws-shaped sensor*,
 ```
 cd Experiments/01_Biomimetic_sensor_simulation/Cat_paws_shaped
 python SimTac_CAT_PAWS.py
 ```
 - For *octopus-tentacle-shaped sensor*,
-```Run ./Octopus/SimTac_Octopus.py```
+```
+cd Experiments/01_Biomimetic_sensor_simulation/Octopus
+python SimTac_Octopus.py
+```
 - For *elephant-truck-shaped sensor*,
-```Run ./Elephant_truck_shaped/SimTac_Elephant_Truck.py```
+```
+cd Experiments/01_Biomimetic_sensor_simulation/Elephant_truck_shaped
+python SimTac_Elephant_Truck.py
+```
 - For *human-thumb-shaped sensor*,
-```Run ./Thumb_shaped/SimTac_THUMB.py```
+```
+cd Experiments/01_Biomimetic_sensor_simulation/Thumb_shaped
+python SimTac_THUMB.py```
 - For *DigiTac sensor*,
-```Run ./DigiTac/SimTac_DIGITAC.py```
+```
+cd Experiments/01_Biomimetic_sensor_simulation/DigiTac
+python SimTac_DIGITAC.py```
 - For *GelSignt sensor*,
-```Run ./GelSight/SimTac_Gelsight.py```
-
-
+```
+cd Experiments/01_Biomimetic_sensor_simulation/GelSight
+python SimTac_Gelsight.py
+```
 ### 3. Sim2Real task 1 - contact object classification
 File path: ./Experiments/02_Classification
 - For *model training*, ```Run ./01_train_classifier.py ```

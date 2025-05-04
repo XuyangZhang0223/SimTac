@@ -40,7 +40,8 @@ python setup.py install --blas_include_dirs=${CONDA_PREFIX}/include --blas=openb
 File path: ./Experiments/01_Biomimetic_sensor_simulation/..
 
 - For *cat-paws-shaped sensor*,
-```Run ./Cat_paws_shaped/SimTac_CAT_PAWS.py ```
+```cd Experiments/01_Biomimetic_sensor_simulation/Cat_paws_shaped
+python SimTac_CAT_PAWS.py ```
 - For *octopus-tentacle-shaped sensor*,
 ```Run ./Octopus/SimTac_Octopus.py```
 - For *elephant-truck-shaped sensor*,

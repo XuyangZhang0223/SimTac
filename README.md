@@ -12,6 +12,9 @@ In this work, we present SimTac, a physics-based simulator for vision-based tact
 
 > Dataset can be downloaded from [Dataset]()
 
+## Operating System
+We recommend running the code on Ubuntu-20.04, CUDA-11.1
+
 ## Installation
 ### Step 1: Build the environment
 ```python

@@ -13,7 +13,7 @@ In this work, we present SimTac, a physics-based simulator for vision-based tact
 > Dataset can be downloaded from [Dataset]()
 
 ## Operating System
-We recommend running the code on Ubuntu-20.04, CUDA-11.1, and following this [link](https://gist.github.com/saratrajput/60b1310fe9d9df664f9983b38b50d5da) to install the Mujoco library.
+We recommend running the code on Ubuntu-20.04, CUDA-11.1, and following this [link](https://gist.github.com/saratrajput/60b1310fe9d9df664f9983b38b50d5da) to install the Mujoco library (step 3).
 
 ## Installation
 ### Step 1: Build the environment

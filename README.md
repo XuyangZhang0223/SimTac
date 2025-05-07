@@ -27,7 +27,7 @@ If you have multiple CUDA versions installed, you can switch to version 11.1 usi
 ```
 sudo rm -f /usr/local/cuda
 sudo ln -s /usr/local/cuda-11.1 /usr/local/cuda
-nvcc --version  # check current CUDA version
+nvcc --version  # check current CUDA version, make sure it is 11.1
 ```
 
 ## Installation

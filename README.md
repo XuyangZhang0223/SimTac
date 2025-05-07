@@ -18,11 +18,16 @@ Please ensure that the current CUDA version in use is 11.1. You can download CUD
 ```
 wget https://developer.download.nvidia.com/compute/cuda/11.1.1/local_installers/cuda_11.1.1_455.32.00_linux.run
 sudo sh cuda_11.1.1_455.32.00_linux.run --toolkit --silent --override
+nano ~/.bashrc # add environment variables
+export PATH=/usr/local/cuda-11.1/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-11.1/lib64:$LD_LIBRARY_PATH
+source ~/.bashrc
 ```
 If you have multiple CUDA versions installed, you can switch to version 11.1 using the following command:
 ```
 sudo rm -f /usr/local/cuda
 sudo ln -s /usr/local/cuda-11.1 /usr/local/cuda
+nvcc --version  # check current CUDA version
 ```
 
 ## Installation

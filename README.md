@@ -42,7 +42,7 @@ conda env update --name SimTac --file environment_final.yml
 ```
 pip install torch ninja
 sudo apt install build-essential python3-dev libopenblas-dev
-sudo apt install g++-7  # recommend version 7.5.0
+sudo apt install g++-7  # recommend version <= 9
 git clone https://github.com/NVIDIA/MinkowskiEngine.git
 cd MinkowskiEngine
 python setup.py install --blas_include_dirs=${CONDA_PREFIX}/include --blas=openblas

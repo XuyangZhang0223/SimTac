@@ -1,4 +1,4 @@
-# SimTac: Simulating Vision-Based Tactile Sensors with Biomorphic Structures
+# Structuring Biomorphic Tactile Perception through Physics-Based Simulation
 
 This repository provides the code implementation for the paper:
 

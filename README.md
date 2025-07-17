@@ -2,7 +2,7 @@
 
 This repository provides the code implementation for the paper:
 
-**Simulating Vision-Based Tactile Sensors with Biomorphic Structures**
+**Structuring Biomorphic Tactile Perception through Physics-Based Simulation**
 
 In this work, we present SimTac, a physics-based simulator for vision-based tactile sensors with biomorphic geometries, capable of generating accurate optical and mechanical responses in real time. SimTac features three core components: a particle-based framework for simulating sensor deformation, a light field rendering system for generating high-fidelity tactile images, and a neural network for predicting dense force distributions. The simulator offers exceptional flexibility, supporting a broad range of biomorphic shapes—including human fingers, cat paws, octopus tentacles, and elephant trunks—as well as diverse optical configurations and material properties, from soft elastomers to rigid substrates. SimTac also enables zero-shot sim-to-real transfer across a variety of tactile perception tasks, such as object shape classification, slip detection, and contact safety assessment. 
 

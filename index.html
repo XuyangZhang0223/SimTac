@@ -213,29 +213,13 @@
     </div>
   </section>
 
-  <!-- Human tactile memory -->
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="box section-box">
-        <h2 class="title is-3 has-text-centered">Human Tactile Memory</h2>
-        <figure>
-          <img src="images/Tactile_memory.png" alt="Human tactile memory">
-          <figcaption> In humans, the <strong style="color:#a00ee4">tactile memory system</strong> enables the <strong>storage and retrieval</strong> of experienced tactile information, 
-             such as haptic stimuli, <strong>across skin regions on hands</strong>. Mechanoreceptors in the skin detect deformation, which is translated into a <strong>unified sensory encoding</strong>, 
-             and transmitted to the somatosensory cortex via peripheral nerves for storage and processing. 
-             This human ability to <strong>adapt, unify, and transfer tactile sensation</strong> offers valuable inspiration for developing <strong>transferable tactile sensing</strong> in robots. </figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
   <!-- Bioinspiration -->
   <section class="section">
     <div class="container is-max-desktop">
       <div class="box section-box">
         <h2 class="title is-3 has-text-centered">Bioinspiration</h2>
         <figure>
-          <img src="images/Motivation.png" alt="Bioinspiration">
+          <img src="images/10.png" alt="Bioinspiration">
           <figcaption><strong style="color:#a00ee4">Overview of the GenForce model</strong>. Tactile sensors produce <strong>diverse tactile signals under 
             the same deformation</strong> due to differences in sensing principles, structural designs and material properties. 
             GenForce <strong>unifies tactile signals into marker representation</strong>, enables <strong>marker-to-marker translation</strong> across various sensors, 
@@ -249,9 +233,9 @@
   <section class="section">
     <div class="container is-max-desktop">
       <div class="box section-box">
-        <h2 class="title is-3 has-text-centered">Architecture</h2>
+        <h2 class="title is-3 has-text-centered">Simulation Framework</h2>
         <figure>
-          <img src="images/Architecture.png" alt="Architecture of GenForce">
+          <img src="images/11.png" alt="Simulation Framework">
           <figcaption><strong style="color:#a00ee4">Marker-to-marker translation (M2M) model</strong>. The M2M model uses <strong>deformed images from calibrated sensors as input</strong> 
             and <strong>reference images from uncalibrated sensors as conditions</strong> to <strong>generate deformed images</strong> that mimic the deformation applied to uncalibrated sensors.  
             <strong>Spatiotemporal force prediction model</strong> takes sequential contact images as input and outputs three-axis forces, 
@@ -261,13 +245,13 @@
     </div>
   </section>
 
-<!-- Marker-to-marker Translation Performance -->
+  <!-- Simulation Principle -->
   <section class="section">
     <div class="container is-max-desktop">
       <div class="box section-box">
-        <h2 class="title is-3 has-text-centered">Marker-to-marker Translation Performance</h2>
+        <h2 class="title is-3 has-text-centered">Simulation Principles</h2>
         <figure>
-          <img src="images/m2m.png" alt="sim">
+          <img src="images/12.png" alt="Deformation and Rendering">
           <figcaption><strong style="color:#a00ee4">Marker-to-marker translation in simulated data</strong> shown with t-SNE.
             we <strong>first propose a simple simulation pipeline to acquire extensive deformed marker images</strong>. 
             densities—referring to <strong>GelSight, uSkin, TacTip and GelTip </strong>sensors. <strong>Eighteen 3D-printed indenters</strong> with diverse geometrical properties 
@@ -278,7 +262,7 @@
         </figure>
 
         <figure>
-          <img src="images/heter_m2m.png" alt="hetero_m2m" >
+          <img src="images/13.png" alt="Force" >
           <figcaption><strong style="color:#a00ee4">Marker-to-marker translation in heterogeneous sensors</strong> shown with images.
           We <strong>unify three distinct tactile signals into marker representation</strong>. For <strong>electronic sensor arrays</strong>, we develop a <strong>signal-to-marker pipeline</strong>
           that <strong>converts multichannel raw signals into marker displacement and diameter change</strong>. 
@@ -293,13 +277,13 @@
   </section>
 
 
-  <!-- Force Prediction Performance -->
+  <!-- Performance -->
   <section class="section">
     <div class="container is-max-desktop">
       <div class="box section-box">
-        <h2 class="title is-3 has-text-centered">Force Prediction Performance</h2>
+        <h2 class="title is-3 has-text-centered">Simulation Performance</h2>
         <figure>
-          <img src="images/homo.png" alt="homo">
+          <img src="images/14.png" alt="Optical Response">
           <figcaption><strong style="color:#a00ee4">Homogeneous Translation Performance</strong> compared with ATI nano 17 F/T sensor before and after using GenForce.
           The <strong>source-only method exhibits large errors (Supplementary Video 2)</strong>. The maximum error in normal force exceeds 4.8 N. 
           Shear force errors are average above 0.28 N. In addition, most sensor combinations have negative R2 values and high variance 
@@ -308,7 +292,7 @@
         </figure>
 
         <figure>
-          <img src="images/hetero.png" alt="hetero">
+          <img src="images/15.png" alt="Mechanical Response">
           <figcaption><strong style="color:#a00ee4">Heterogeneous Translation Performance</strong> compared with ATI nano 17 F/T sensor before and after using GenForce.
           The average of MAE over all six combinations decreases below 0.92 N for normal force, while Fx and Fy reduce below 0.22 N and 0.3 N, respectively.
            Notably, the uSkin_TacTip group shows a 93% improvement of in MAE (from 7.76 N to 0.52 N) and a 66% improvement of Fy (from 0.59 N to 0.2 N). 
@@ -321,13 +305,13 @@
   </section>
 
 
-<!-- Applications -->
+<!-- Generalization Capability -->
   <section class="section">
     <div class="container is-max-desktop">
       <div class="box section-box">
-        <h2 class="title is-3 has-text-centered">Applications</h2>
+        <h2 class="title is-3 has-text-centered">Simulation Flexibility</h2>
         <figure>
-          <img src="images/Dynamic.png" alt="Dynamic">
+          <img src="images/16.png" alt="Shape">
           <figcaption><strong style="color:#a00ee4">Force prediction with dynamic contact events</strong> compared with ATI nano 17 F/T sensor
           We <strong>evaluated our model in real-time across six transfer groups</strong> under more dynamic conditions (see Supplementary Video 3). 
           Tactile sensors were mounted on an ATI Nano17 F/T sensor, and we applied forces using four daily objects with different shapes and materials, 
@@ -338,7 +322,39 @@
         </figure>
 
         <figure>
-          <img src="images/Grapsing.png" alt="Grapsing">
+          <img src="images/17.png" alt="Material">
+          <figcaption><strong style="color:#a00ee4">Daily objects grasping with transferable force sensing and control using GelSight (A-II) and uSkin (3 axis)</strong>. 
+            <strong>We transfer the force prediction model to above two sensors by using a third flat-surface vision-based tactile sensor (GelSight, marker pattern A-II) tactile sensor with our GenForce model</strong> . 
+            The task requires robot to grasp nine daily objects with different sizes, shapes and material without damage them. 
+            Those objects include potato <strong>chip, grape, strawberry, orange, plum, wood block, glue stick, meat box and tea box, 
+            which are unseen in the training dataset</strong>. During the grasping, the arm is controlled with a proportional controller to 
+            grasp those objects with fixed normal forces ranging from 0.6N to 1.2N. Both sensors are shared with the same force controller. 
+            As shown in above figure and Supplementary Video 4&5, both sensors can equip the robot arm an accurate force sensing so that the robot arm can <strong>successfully grasp all objects with target forces without damage</strong>. 
+            Even for challenging objects such as <strong>chips and fresh fruits<strong>, the robot can achieve delicate grasping by using the transferred force prediction model combining with <strong>force control</strong>. </figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Applications - Sensor Prototyping -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="box section-box">
+        <h2 class="title is-3 has-text-centered">Applications - Sensor Prototype Development</h2>
+        <figure>
+          <img src="images/18.png" alt="Shape">
+          <figcaption><strong style="color:#a00ee4">Force prediction with dynamic contact events</strong> compared with ATI nano 17 F/T sensor
+          We <strong>evaluated our model in real-time across six transfer groups</strong> under more dynamic conditions (see Supplementary Video 3). 
+          Tactile sensors were mounted on an ATI Nano17 F/T sensor, and we applied forces using four daily objects with different shapes and materials, 
+          including <strong>screwdriver, glue stick, plastic pizza, and a LEGO block</strong>  . 
+          A human operator performed five common dynamic contact events, including <strong>press, rub, roll, push, and pull, 
+          as well as continuous combinations of these on the sensor surface</strong>. All test groups exhibited <strong>fast, accurate responses comparable to a commercial F/T sensor</strong>.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/19.png" alt="Material">
           <figcaption><strong style="color:#a00ee4">Daily objects grasping with transferable force sensing and control using GelSight (A-II) and uSkin (3 axis)</strong>. 
             <strong>We transfer the force prediction model to above two sensors by using a third flat-surface vision-based tactile sensor (GelSight, marker pattern A-II) tactile sensor with our GenForce model</strong> . 
             The task requires robot to grasp nine daily objects with different sizes, shapes and material without damage them. 
@@ -350,21 +366,53 @@
         </figure>
 
         <figure>
-          <img src="images/Slip.png" alt="Slip">
-          <figcaption><strong style="color:#a00ee4">Transferable force sensing in robot slip detection and avoidance</strong>. 
-            A curved surface, vision based TacTip sensor (palm shape) is mounted on the left finger, 
-            and a three-axis magnetic uSkin sensor is mounted on the right. The TacTip's force prediction model 
-            is transferred from GelSight (D-I), and the uSkin model is subsequently transferred from the TacTip. 
-            The task proceeds through <strong>several stages: moving down, proportional control grasping, lifting, 
-            slip detection and avoidance at the top position, release, and return to home</strong> with the force controller
-            active only during the grasp and slip detection phases. We evaluate <strong>four objects: banana, plum, meat box, and glue stick</strong>. Beyond completing the grasp, external forces are applied by a human at the top position to induce slip. 
-            The robot detects slip via changes in shear force and responds by narrowing the gripper width. As shown in above figure and<strong> Supplementary Videos 6-7</strong>, 
-            the system completes all stages successfully, demonstrating the practical applications of our model in real robotic tasks.</figcaption>
-        </figure>     
+          <img src="images/20.png" alt="Shape">
+          <figcaption><strong style="color:#a00ee4">Force prediction with dynamic contact events</strong> compared with ATI nano 17 F/T sensor
+          We <strong>evaluated our model in real-time across six transfer groups</strong> under more dynamic conditions (see Supplementary Video 3). 
+          Tactile sensors were mounted on an ATI Nano17 F/T sensor, and we applied forces using four daily objects with different shapes and materials, 
+          including <strong>screwdriver, glue stick, plastic pizza, and a LEGO block</strong>  . 
+          A human operator performed five common dynamic contact events, including <strong>press, rub, roll, push, and pull, 
+          as well as continuous combinations of these on the sensor surface</strong>. All test groups exhibited <strong>fast, accurate responses comparable to a commercial F/T sensor</strong>.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/21.png" alt="Material">
+          <figcaption><strong style="color:#a00ee4">Daily objects grasping with transferable force sensing and control using GelSight (A-II) and uSkin (3 axis)</strong>. 
+            <strong>We transfer the force prediction model to above two sensors by using a third flat-surface vision-based tactile sensor (GelSight, marker pattern A-II) tactile sensor with our GenForce model</strong> . 
+            The task requires robot to grasp nine daily objects with different sizes, shapes and material without damage them. 
+            Those objects include potato <strong>chip, grape, strawberry, orange, plum, wood block, glue stick, meat box and tea box, 
+            which are unseen in the training dataset</strong>. During the grasping, the arm is controlled with a proportional controller to 
+            grasp those objects with fixed normal forces ranging from 0.6N to 1.2N. Both sensors are shared with the same force controller. 
+            As shown in above figure and Supplementary Video 4&5, both sensors can equip the robot arm an accurate force sensing so that the robot arm can <strong>successfully grasp all objects with target forces without damage</strong>. 
+            Even for challenging objects such as <strong>chips and fresh fruits<strong>, the robot can achieve delicate grasping by using the transferred force prediction model combining with <strong>force control</strong>. </figcaption>
+        </figure>
 
       </div>
     </div>
   </section>
+
+
+  <!-- Applications - Sim2Real -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="box section-box">
+        <h2 class="title is-3 has-text-centered">Applications - Sim2Real Tasks</h2>
+        <figure>
+          <img src="images/22.png" alt="Shape">
+          <figcaption><strong style="color:#a00ee4">Force prediction with dynamic contact events</strong> compared with ATI nano 17 F/T sensor
+          We <strong>evaluated our model in real-time across six transfer groups</strong> under more dynamic conditions (see Supplementary Video 3). 
+          Tactile sensors were mounted on an ATI Nano17 F/T sensor, and we applied forces using four daily objects with different shapes and materials, 
+          including <strong>screwdriver, glue stick, plastic pizza, and a LEGO block</strong>  . 
+          A human operator performed five common dynamic contact events, including <strong>press, rub, roll, push, and pull, 
+          as well as continuous combinations of these on the sensor surface</strong>. All test groups exhibited <strong>fast, accurate responses comparable to a commercial F/T sensor</strong>.
+          </figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+              
 
   <!-- Demo Videos (Two-column responsive grid) -->
   <section class="section">
@@ -380,71 +428,51 @@
         <!-- 1 -->
         <div class="video-item">
           <div class="ratio-16x9">
-            <iframe src="https://www.youtube.com/embed/WH0H29L9_80?si=z8Al2-NOFQrqe9iV"
-              title="Marker-to-marker translation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            <iframe src="https://www.youtube.com/embed/HPQGDpcDTZY?si=r5B_lTcf_3i_HgZ2"
+              title="Elephant Trunk Shaped Tactile Sensor" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <div class="video-title" style="text-align:center;">Marker-to-marker translation</div>
+          <div class="video-title" style="text-align:center;">Elephant-Trunk-Shaped Tactile Sensor</div>
         </div>
 
         <!-- 2 -->
         <div class="video-item">
           <div class="ratio-16x9">
-            <iframe src="https://www.youtube.com/embed/VcYdDlSoOmQ?si=r_yl8_HCiNCYfoDA"
-              title="Force Prediction Performance" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            <iframe src="https://www.youtube.com/embed/a60Z03MYVbY?si=Y8WpC_qvk174SuXE"
+              title="Sim2Real Task - Contact Object Classification" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <div class="video-title" style="text-align:center;">Force Prediction Performance</div>
+          <div class="video-title" style="text-align:center;">Sim2Real Task - Contact Object Classification</div>
         </div>
 
         <!-- 3 -->
         <div class="video-item">
           <div class="ratio-16x9">
-            <iframe src="https://www.youtube.com/embed/d8XDvgV8BY8?si=gfQ74cKPjZZyqvA5"
-              title="Dynamic Force Test" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            <iframe src="https://www.youtube.com/embed/jL0pn79YetM?si=Wk9iSsHdrRJsXdnc"
+              title="Sim2Real Task - Slip Detection" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <div class="video-title" style="text-align:center;">Dynamic Force Test</div>
+          <div class="video-title" style="text-align:center;">Sim2Real Task - Slip Detection</div>
         </div>
 
         <!-- 4 -->
         <div class="video-item">
           <div class="ratio-16x9">
-            <iframe src="https://www.youtube.com/embed/eEBpvs0Urks?si=kWQ3xHpEP0cK3tDV"
-              title="Daily object grasping (1)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            <iframe src="https://www.youtube.com/embed/nuzYP6lR-jQ?si=0Cl6b4EcAqWZIzS8"
+              title="Sim2Real Task - Contact Safety Assessment" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <div class="video-title" style="text-align:center;">Daily object grasping (1)</div>
+          <div class="video-title" style="text-align:center;">Sim2Real Task - Contact Safety Assessment</div>
         </div>
 
         <!-- 5 -->
         <div class="video-item">
           <div class="ratio-16x9">
-            <iframe src="https://www.youtube.com/embed/fs-T0AL-C_I?si=Pbt53NgDW6g-nG_D"
-              title="Daily object grasping (2)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            <iframe src="https://www.youtube.com/embed/0Dtd_BnZIco?si=jpiLy2eCYxBdqgme"
+              title="Sim2Real Task - Dynamic Slip Detection" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <div class="video-title" style="text-align:center;">Daily object grasping (2)</div>
-        </div>
-
-        <!-- 6 -->
-        <div class="video-item">
-          <div class="ratio-16x9">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/jNdo2LdvH_w?si=M2BGf3wCN15nQQqh" 
-            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-          <div class="video-title" style="text-align:center;">Slip Compensation: single-sensor control</div>
-        </div>
-
-        <!-- 7 -->
-        <div class="video-item">
-          <div class="ratio-16x9">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/IKQ6dDlc8cE?si=d9RX2G2qfnV-rNbY" 
-            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-          <div class="video-title" style="text-align:center;">Slip Compensation: multi-sensor coordination</div>
+          <div class="video-title" style="text-align:center;">Sim2Real Task - Dynamic Slip Detection</div>
         </div>
 
       </div>

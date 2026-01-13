@@ -221,7 +221,7 @@
         <figure>
           <img src="images/10.png" alt="Bioinspiration">
           <figcaption><strong style="color:#a4514f">Bridging biological and artificial tactile sensing via SimTac:</strong> a simulator for modelling biomorphic vision-based tactile sensors. 
-            Compared with conventional flat-shaped tactile sensors, biomorphically inspired tactile sensors exhibit <strong style="color:#356f8d">enhanced geometric complexity and an extended sensing range</strong>, which imposes increased challenges for simulation modelling.</figcaption>
+            Compared with conventional flat-shaped tactile sensors, <strong style="color:#356f8d">biomorphically inspired tactile sensors exhibit enhanced geometric complexity and an extended sensing range</strong>, which imposes increased challenges for simulation modelling.</figcaption>
         </figure>
       </div>
     </div>
@@ -234,10 +234,9 @@
         <h2 class="title is-3 has-text-centered">Simulation Framework</h2>
         <figure>
           <img src="images/11.png" alt="Simulation Framework">
-          <figcaption><strong style="color:#a4514f">Marker-to-marker translation (M2M) model</strong>. The M2M model uses <strong>deformed images from calibrated sensors as input</strong> 
-            and <strong>reference images from uncalibrated sensors as conditions</strong> to <strong>generate deformed images</strong> that mimic the deformation applied to uncalibrated sensors.  
-            <strong>Spatiotemporal force prediction model</strong> takes sequential contact images as input and outputs three-axis forces, 
-            enhancing prediction accuracy through a spatiotemporal module.</figcaption>
+          <figcaption><strong style="color:#a4514f">The simulation framework of SimTac</strong>. 
+            The <strong style="color:#356f8d">input</strong> includes the sensor shape, marker pattern, optical system definition, and material properties. 
+            The <strong style="color:#356f8d">output</strong> consists of optical responses and mechanical responses.</figcaption>
         </figure>
       </div>
     </div>
@@ -250,12 +249,11 @@
         <h2 class="title is-3 has-text-centered">Simulation Principles</h2>
         <figure>
           <img src="images/12.png" alt="Deformation and Rendering">
-          <figcaption><strong style="color:#a4514f">Marker-to-marker translation in simulated data</strong> shown with t-SNE.
-            we <strong>first propose a simple simulation pipeline to acquire extensive deformed marker images</strong>. 
-            densities—referring to <strong>GelSight, uSkin, TacTip and GelTip </strong>sensors. <strong>Eighteen 3D-printed indenters</strong> with diverse geometrical properties 
-            (vertices, edges, and curvatures) are used for indentation33. Each marker pattern can serve as both source sensor and target sensor, 
-            resulting in a total of <strong>132 sensor combinations</strong>.The generated images and target images are <strong>aligned closely in feature space and visually indistinguishable</strong>.
-            <strong>See Supplementary Video 1</strong>.
+          <figcaption><strong style="color:#a4514f">The principle of sensor membrane deformation simulation and optical rendering simulation</strong>. 
+            Here we use a finger-shaped GelTip sensor as an example. <strong>a-b,</strong>
+            The pipeline of the tactile image simulation. We amplify the contact deformation and sparsify the particle density to facilitate easier understanding; 
+            a particle-based iteration method is employed for simulating membrane deformation, while optical rendering is achieved using a light field-based lighting model. 
+            <strong>c},</strong> Offline light field generation. <strong>d,</strong> Real-time online image rendering.
            </figcaption>
         </figure>
 

@@ -250,10 +250,10 @@
         <figure>
           <img src="images/12.png" alt="Deformation and Rendering">
           <figcaption><strong style="color:#a4514f">The principle of sensor membrane deformation simulation and optical rendering simulation</strong>. 
-            Here we use a finger-shaped GelTip sensor as an example. <strong>a-b,</strong>
+            Here we use a finger-shaped GelTip sensor as an example. a-b,
             The pipeline of the tactile image simulation. We amplify the contact deformation and sparsify the particle density to facilitate easier understanding; 
             <strong>a particle-based iteration method</strong> is employed for <strong>simulating membrane deformation</strong>strong>, while <strong>optical rendering</strong>strong> is achieved using <strong>a light field-based lighting model</strong>. 
-            <strong>c,</strong> Offline light field generation. <strong>d,</strong> Real-time online image rendering.
+            c, Offline light field generation. d, Real-time online image rendering.
            </figcaption>
         </figure>
 
@@ -261,7 +261,7 @@
           <img src="images/13.png" alt="Force" >
           <figcaption><strong style="color:#a4514f">The principle of mechanical response simulation</strong>. 
             We amplify the contact deformation and sparsify the particle density to facilitate easier understanding; 
-            A Sparse Tensor Network is used to predict force/deformation fields, where the deformation data iterated from the MPM simulation approach serves as input, 
+            <strong>A Sparse Tensor Network</strong> is used to <strong>predict force/deformation fields</strong>, where the deformation data iterated from the Material Point Method (MPM) serves as input, 
             while the force/deformation data computed from FEM serves as the ground truth. 
             This framework enables rapid and accurate mechanical response simulations that approximate FEM-level precision. 
           </figcaption>
@@ -278,21 +278,20 @@
       <div class="box section-box">
         <h2 class="title is-3 has-text-centered">Simulation Performance</h2>
         <figure>
-          <img src="images/14.png" alt="Optical Response">
-          <figcaption><strong style="color:#a4514f">Homogeneous Translation Performance</strong> compared with ATI nano 17 F/T sensor before and after using GenForce.
-          The <strong>source-only method exhibits large errors (Supplementary Video 2)</strong>. The maximum error in normal force exceeds 4.8 N. 
-          Shear force errors are average above 0.28 N. In addition, most sensor combinations have negative R2 values and high variance 
-          and demonstrate poor performance in real-time force prediction. <strong>After using the GenForce model, all force errors are significantly reduced, and R2 values improve across all combinations</strong>. 
-          </figcaption>
+          <figcaption><strong style="color:#a4514f">The performance evaluation of optical response simulation</strong>. 
+            a, <strong>The comparison of tactile images</strong> collected from the real world and those generated from the proposed simulator under varying contact positions and indenter shapes. 
+            b, <strong>The quantitative analysis results</strong> of the optical simulation under contact with different indenters, evaluated using: 
+            (i) Structural Similarity Index (SSIM); (ii) Mean Squared Error (MSE); (iii) Mean Absolute Error (MAE); (iv) Peak Signal-to-Noise Ratio (PSNR). 
+            c, The optical simulation results when the sensor <strong>interacts with different textures</strong>.</figcaption>
         </figure>
 
         <figure>
           <img src="images/15.png" alt="Mechanical Response">
-          <figcaption><strong style="color:#a4514f">Heterogeneous Translation Performance</strong> compared with ATI nano 17 F/T sensor before and after using GenForce.
-          The average of MAE over all six combinations decreases below 0.92 N for normal force, while Fx and Fy reduce below 0.22 N and 0.3 N, respectively.
-           Notably, the uSkin_TacTip group shows a 93% improvement of in MAE (from 7.76 N to 0.52 N) and a 66% improvement of Fy (from 0.59 N to 0.2 N). 
-           The force errors for all combinations are <strong>centered around zero within ranges of -4N to 0N in normal direction and -3N to 3N in shear direction, 
-          demonstrating both the accuracy and reliability of our model.</figcaption>
+          <figcaption><strong style="color:#a4514f">The performance evaluation of mechanical response simulation</strong>. 
+            a, <strong>Comparison of 3D deformation and force fields</strong> between SimTac simulation and ground truth from FEM on the test set across different contact scenarios. 
+            b,<strong>Comparison of marker motion</strong> between the SimTac simulation and ground truth from the real world across different contact scenarios. 
+            c, <strong>The quantitative analysis results</strong> of the mechanical response simulation when in contact with different indenters. 
+            (i) MAE of deformation field; (ii) MAE of force field; (iii) Percentage error of the total force.</figcaption>
         </figure>  
 
       </div>
@@ -307,25 +306,19 @@
         <h2 class="title is-3 has-text-centered">Simulation Flexibility</h2>
         <figure>
           <img src="images/16.png" alt="Shape">
-          <figcaption><strong style="color:#a4514f">Force prediction with dynamic contact events</strong> compared with ATI nano 17 F/T sensor
-          We <strong>evaluated our model in real-time across six transfer groups</strong> under more dynamic conditions (see Supplementary Video 3). 
-          Tactile sensors were mounted on an ATI Nano17 F/T sensor, and we applied forces using four daily objects with different shapes and materials, 
-          including <strong>screwdriver, glue stick, plastic pizza, and a LEGO block</strong>  . 
-          A human operator performed five common dynamic contact events, including <strong>press, rub, roll, push, and pull, 
-          as well as continuous combinations of these on the sensor surface</strong>. All test groups exhibited <strong>fast, accurate responses comparable to a commercial F/T sensor</strong>.
+          <figcaption><strong style="color:#a4514f">The shape flexibility of the SimTac simulator</strong>. 
+            The proposed simulator can be applied to tactile sensors <strong>with diverse biomorphic shapes</strong>,
+            and is also capable of simulating <strong>both RGB-based and marker-based tactile sensors</strong>.
           </figcaption>
         </figure>
 
         <figure>
           <img src="images/17.png" alt="Material">
-          <figcaption><strong style="color:#a4514f">Daily objects grasping with transferable force sensing and control using GelSight (A-II) and uSkin (3 axis)</strong>. 
-            <strong>We transfer the force prediction model to above two sensors by using a third flat-surface vision-based tactile sensor (GelSight, marker pattern A-II) tactile sensor with our GenForce model</strong> . 
-            The task requires robot to grasp nine daily objects with different sizes, shapes and material without damage them. 
-            Those objects include potato <strong>chip, grape, strawberry, orange, plum, wood block, glue stick, meat box and tea box, 
-            which are unseen in the training dataset</strong>. During the grasping, the arm is controlled with a proportional controller to 
-            grasp those objects with fixed normal forces ranging from 0.6N to 1.2N. Both sensors are shared with the same force controller. 
-            As shown in above figure and Supplementary Video 4&5, both sensors can equip the robot arm an accurate force sensing so that the robot arm can <strong>successfully grasp all objects with target forces without damage</strong>. 
-            Even for challenging objects such as <strong>chips and fresh fruits<strong>, the robot can achieve delicate grasping by using the transferred force prediction model combining with <strong>force control</strong>. </figcaption>
+          <figcaption><strong style="color:#a4514f">The material flexibility of the SimTac simulator</strong>. 
+            a, Deformation of membranes with varying hardness under identical contact conditions. Softer membranes exhibit larger deformation and lower force. 
+            b, The trained network can be applied to <strong>sensor membranes of different materials</strong> through a <strong>fine-tuning process</strong>, requiring only a small additional FEM ground truth dataset.
+            c, The MAE of (i) deformation field; (ii) force field and (iii) total force in the X, Y, and Z directions between the simulated and ground truth values, evaluated across GelTip sensor membranes of different materials.
+           </figcaption>
         </figure>
 
       </div>
@@ -339,48 +332,36 @@
         <h2 class="title is-3 has-text-centered">Applications - Sensor Prototype Development</h2>
         <figure>
           <img src="images/18.png" alt="Shape">
-          <figcaption><strong style="color:#a4514f">Force prediction with dynamic contact events</strong> compared with ATI nano 17 F/T sensor
-          We <strong>evaluated our model in real-time across six transfer groups</strong> under more dynamic conditions (see Supplementary Video 3). 
-          Tactile sensors were mounted on an ATI Nano17 F/T sensor, and we applied forces using four daily objects with different shapes and materials, 
-          including <strong>screwdriver, glue stick, plastic pizza, and a LEGO block</strong>  . 
-          A human operator performed five common dynamic contact events, including <strong>press, rub, roll, push, and pull, 
-          as well as continuous combinations of these on the sensor surface</strong>. All test groups exhibited <strong>fast, accurate responses comparable to a commercial F/T sensor</strong>.
+          <figcaption><strong style="color:#a4514f">Simulation and fabrication of a biomorphic elephant trunk-shaped tactile sensor</strong>.
+            a, <strong>The inspiration from the elephant trunk</strong>, which enables <strong>all-surface tactile sensing and active grasping capability</strong>.
+            b, <strong>Overview of the sensor prototype in simulation</strong>.
+            c, <strong>Simulation pipeline of the sensor</strong>, involving mesh particleization, deformation modelling, and synthetic tactile image generation through light field rendering.
+            d, <strong>Exploded view of the real sensor design</strong>, showing its modular components, including an actuator, sensor membrane, transparent tube, and integrated optical system.
+            e, <strong>Fabrication workflow for the sensor</strong>, including mould-based elastomer casting, structural 3D printing, and reflective layer coating.
           </figcaption>
         </figure>
 
         <figure>
           <img src="images/19.png" alt="Material">
-          <figcaption><strong style="color:#a4514f">Daily objects grasping with transferable force sensing and control using GelSight (A-II) and uSkin (3 axis)</strong>. 
-            <strong>We transfer the force prediction model to above two sensors by using a third flat-surface vision-based tactile sensor (GelSight, marker pattern A-II) tactile sensor with our GenForce model</strong> . 
-            The task requires robot to grasp nine daily objects with different sizes, shapes and material without damage them. 
-            Those objects include potato <strong>chip, grape, strawberry, orange, plum, wood block, glue stick, meat box and tea box, 
-            which are unseen in the training dataset</strong>. During the grasping, the arm is controlled with a proportional controller to 
-            grasp those objects with fixed normal forces ranging from 0.6N to 1.2N. Both sensors are shared with the same force controller. 
-            As shown in above figure and Supplementary Video 4&5, both sensors can equip the robot arm an accurate force sensing so that the robot arm can <strong>successfully grasp all objects with target forces without damage</strong>. 
-            Even for challenging objects such as <strong>chips and fresh fruits<strong>, the robot can achieve delicate grasping by using the transferred force prediction model combining with <strong>force control</strong>. </figcaption>
+          <figcaption><strong style="color:#a4514f">Evaluation of optical response simulation on an elephant-trunk-shaped sensor</strong>. 
+            Comparison between a, the simulated and b, the real sensor deformation and tactile perception of a biomorphic elephant trunk-shaped tactile sensor.
+         </figcaption>
         </figure>
 
         <figure>
           <img src="images/20.png" alt="Shape">
-          <figcaption><strong style="color:#a4514f">Force prediction with dynamic contact events</strong> compared with ATI nano 17 F/T sensor
-          We <strong>evaluated our model in real-time across six transfer groups</strong> under more dynamic conditions (see Supplementary Video 3). 
-          Tactile sensors were mounted on an ATI Nano17 F/T sensor, and we applied forces using four daily objects with different shapes and materials, 
-          including <strong>screwdriver, glue stick, plastic pizza, and a LEGO block</strong>  . 
-          A human operator performed five common dynamic contact events, including <strong>press, rub, roll, push, and pull, 
-          as well as continuous combinations of these on the sensor surface</strong>. All test groups exhibited <strong>fast, accurate responses comparable to a commercial F/T sensor</strong>.
+          <figcaption><strong style="color:#a4514f">Evaluation of mechanical response simulation on an elephant-trunk-shaped sensor using the fine-tuned model</strong>. 
+             a, <strong>Comparison of 3D deformation and force maps</strong> between SimTac simulation and ground truth from FEM across different contact scenarios. b, Different indenters. 
+            c, <strong>The quantitative analysis results</strong> of the mechanical response simulation when in contact with different indenters. 
+            (i) MAE of deformation maps; (ii) MAE of force maps; (iii) Percentage error of the total force.
+
           </figcaption>
         </figure>
 
         <figure>
           <img src="images/21.png" alt="Material">
-          <figcaption><strong style="color:#a4514f">Daily objects grasping with transferable force sensing and control using GelSight (A-II) and uSkin (3 axis)</strong>. 
-            <strong>We transfer the force prediction model to above two sensors by using a third flat-surface vision-based tactile sensor (GelSight, marker pattern A-II) tactile sensor with our GenForce model</strong> . 
-            The task requires robot to grasp nine daily objects with different sizes, shapes and material without damage them. 
-            Those objects include potato <strong>chip, grape, strawberry, orange, plum, wood block, glue stick, meat box and tea box, 
-            which are unseen in the training dataset</strong>. During the grasping, the arm is controlled with a proportional controller to 
-            grasp those objects with fixed normal forces ranging from 0.6N to 1.2N. Both sensors are shared with the same force controller. 
-            As shown in above figure and Supplementary Video 4&5, both sensors can equip the robot arm an accurate force sensing so that the robot arm can <strong>successfully grasp all objects with target forces without damage</strong>. 
-            Even for challenging objects such as <strong>chips and fresh fruits<strong>, the robot can achieve delicate grasping by using the transferred force prediction model combining with <strong>force control</strong>. </figcaption>
+          <figcaption><strong style="color:#a4514f">Simulation results of optical and mechanical responses to simultaneous multi-point contacts on an elephant-trunk-shaped sensor.</strong>. 
+          </figcaption>
         </figure>
 
       </div>
@@ -395,12 +376,10 @@
         <h2 class="title is-3 has-text-centered">Applications - Sim2Real Tasks</h2>
         <figure>
           <img src="images/22.png" alt="Shape">
-          <figcaption><strong style="color:#a4514f">Force prediction with dynamic contact events</strong> compared with ATI nano 17 F/T sensor
-          We <strong>evaluated our model in real-time across six transfer groups</strong> under more dynamic conditions (see Supplementary Video 3). 
-          Tactile sensors were mounted on an ATI Nano17 F/T sensor, and we applied forces using four daily objects with different shapes and materials, 
-          including <strong>screwdriver, glue stick, plastic pizza, and a LEGO block</strong>  . 
-          A human operator performed five common dynamic contact events, including <strong>press, rub, roll, push, and pull, 
-          as well as continuous combinations of these on the sensor surface</strong>. All test groups exhibited <strong>fast, accurate responses comparable to a commercial F/T sensor</strong>.
+          <figcaption><strong style="color:#a4514f">Performance evaluation of the tactile-based Sim2Real tasks</strong>. 
+            a, (i) Pipeline and (ii) results of the object classification Sim2Real task. 
+            b, (i) Pipeline and (ii) results of the slip detection Sim2Real task. 
+            c, (i) Pipeline and (ii) results of the contact safety assessment Sim2Real task.
           </figcaption>
         </figure>
 

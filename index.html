@@ -220,10 +220,8 @@
         <h2 class="title is-3 has-text-centered">Bioinspiration</h2>
         <figure>
           <img src="images/10.png" alt="Bioinspiration">
-          <figcaption><strong style="color:#a00ee4">Overview of the GenForce model</strong>. Tactile sensors produce <strong>diverse tactile signals under 
-            the same deformation</strong> due to differences in sensing principles, structural designs and material properties. 
-            GenForce <strong>unifies tactile signals into marker representation</strong>, enables <strong>marker-to-marker translation</strong> across various sensors, 
-            and achieves <strong>high-accuracy force prediction</strong> on uncalibrated sensors using data transferred from calibrated sensors.</figcaption>
+          <figcaption><strong style="color:#a4514f">Bridging biological and artificial tactile sensing via SimTac:</strong> a simulator for modelling biomorphic vision-based tactile sensors. 
+            Compared with conventional flat-shaped tactile sensors, biomorphically inspired tactile sensors exhibit <strong style="color:#356f8d">enhanced geometric complexity and an extended sensing range</strong>, which imposes increased challenges for simulation modelling.</figcaption>
         </figure>
       </div>
     </div>
@@ -236,7 +234,7 @@
         <h2 class="title is-3 has-text-centered">Simulation Framework</h2>
         <figure>
           <img src="images/11.png" alt="Simulation Framework">
-          <figcaption><strong style="color:#a00ee4">Marker-to-marker translation (M2M) model</strong>. The M2M model uses <strong>deformed images from calibrated sensors as input</strong> 
+          <figcaption><strong style="color:#a4514f">Marker-to-marker translation (M2M) model</strong>. The M2M model uses <strong>deformed images from calibrated sensors as input</strong> 
             and <strong>reference images from uncalibrated sensors as conditions</strong> to <strong>generate deformed images</strong> that mimic the deformation applied to uncalibrated sensors.  
             <strong>Spatiotemporal force prediction model</strong> takes sequential contact images as input and outputs three-axis forces, 
             enhancing prediction accuracy through a spatiotemporal module.</figcaption>
@@ -252,7 +250,7 @@
         <h2 class="title is-3 has-text-centered">Simulation Principles</h2>
         <figure>
           <img src="images/12.png" alt="Deformation and Rendering">
-          <figcaption><strong style="color:#a00ee4">Marker-to-marker translation in simulated data</strong> shown with t-SNE.
+          <figcaption><strong style="color:#a4514f">Marker-to-marker translation in simulated data</strong> shown with t-SNE.
             we <strong>first propose a simple simulation pipeline to acquire extensive deformed marker images</strong>. 
             densities—referring to <strong>GelSight, uSkin, TacTip and GelTip </strong>sensors. <strong>Eighteen 3D-printed indenters</strong> with diverse geometrical properties 
             (vertices, edges, and curvatures) are used for indentation33. Each marker pattern can serve as both source sensor and target sensor, 
@@ -263,7 +261,7 @@
 
         <figure>
           <img src="images/13.png" alt="Force" >
-          <figcaption><strong style="color:#a00ee4">Marker-to-marker translation in heterogeneous sensors</strong> shown with images.
+          <figcaption><strong style="color:#a4514f">Marker-to-marker translation in heterogeneous sensors</strong> shown with images.
           We <strong>unify three distinct tactile signals into marker representation</strong>. For <strong>electronic sensor arrays</strong>, we develop a <strong>signal-to-marker pipeline</strong>
           that <strong>converts multichannel raw signals into marker displacement and diameter change</strong>. 
           Although <strong>some tactile arrays (e.g., capacitive or resistive)</strong> can only measure pressure in each taxel compared to magnetic sensor with 3-axis measurement, 
@@ -284,7 +282,7 @@
         <h2 class="title is-3 has-text-centered">Simulation Performance</h2>
         <figure>
           <img src="images/14.png" alt="Optical Response">
-          <figcaption><strong style="color:#a00ee4">Homogeneous Translation Performance</strong> compared with ATI nano 17 F/T sensor before and after using GenForce.
+          <figcaption><strong style="color:#a4514f">Homogeneous Translation Performance</strong> compared with ATI nano 17 F/T sensor before and after using GenForce.
           The <strong>source-only method exhibits large errors (Supplementary Video 2)</strong>. The maximum error in normal force exceeds 4.8 N. 
           Shear force errors are average above 0.28 N. In addition, most sensor combinations have negative R2 values and high variance 
           and demonstrate poor performance in real-time force prediction. <strong>After using the GenForce model, all force errors are significantly reduced, and R2 values improve across all combinations</strong>. 
@@ -293,7 +291,7 @@
 
         <figure>
           <img src="images/15.png" alt="Mechanical Response">
-          <figcaption><strong style="color:#a00ee4">Heterogeneous Translation Performance</strong> compared with ATI nano 17 F/T sensor before and after using GenForce.
+          <figcaption><strong style="color:#a4514f">Heterogeneous Translation Performance</strong> compared with ATI nano 17 F/T sensor before and after using GenForce.
           The average of MAE over all six combinations decreases below 0.92 N for normal force, while Fx and Fy reduce below 0.22 N and 0.3 N, respectively.
            Notably, the uSkin_TacTip group shows a 93% improvement of in MAE (from 7.76 N to 0.52 N) and a 66% improvement of Fy (from 0.59 N to 0.2 N). 
            The force errors for all combinations are <strong>centered around zero within ranges of -4N to 0N in normal direction and -3N to 3N in shear direction, 
@@ -312,7 +310,7 @@
         <h2 class="title is-3 has-text-centered">Simulation Flexibility</h2>
         <figure>
           <img src="images/16.png" alt="Shape">
-          <figcaption><strong style="color:#a00ee4">Force prediction with dynamic contact events</strong> compared with ATI nano 17 F/T sensor
+          <figcaption><strong style="color:#a4514f">Force prediction with dynamic contact events</strong> compared with ATI nano 17 F/T sensor
           We <strong>evaluated our model in real-time across six transfer groups</strong> under more dynamic conditions (see Supplementary Video 3). 
           Tactile sensors were mounted on an ATI Nano17 F/T sensor, and we applied forces using four daily objects with different shapes and materials, 
           including <strong>screwdriver, glue stick, plastic pizza, and a LEGO block</strong>  . 
@@ -323,7 +321,7 @@
 
         <figure>
           <img src="images/17.png" alt="Material">
-          <figcaption><strong style="color:#a00ee4">Daily objects grasping with transferable force sensing and control using GelSight (A-II) and uSkin (3 axis)</strong>. 
+          <figcaption><strong style="color:#a4514f">Daily objects grasping with transferable force sensing and control using GelSight (A-II) and uSkin (3 axis)</strong>. 
             <strong>We transfer the force prediction model to above two sensors by using a third flat-surface vision-based tactile sensor (GelSight, marker pattern A-II) tactile sensor with our GenForce model</strong> . 
             The task requires robot to grasp nine daily objects with different sizes, shapes and material without damage them. 
             Those objects include potato <strong>chip, grape, strawberry, orange, plum, wood block, glue stick, meat box and tea box, 
@@ -344,7 +342,7 @@
         <h2 class="title is-3 has-text-centered">Applications - Sensor Prototype Development</h2>
         <figure>
           <img src="images/18.png" alt="Shape">
-          <figcaption><strong style="color:#a00ee4">Force prediction with dynamic contact events</strong> compared with ATI nano 17 F/T sensor
+          <figcaption><strong style="color:#a4514f">Force prediction with dynamic contact events</strong> compared with ATI nano 17 F/T sensor
           We <strong>evaluated our model in real-time across six transfer groups</strong> under more dynamic conditions (see Supplementary Video 3). 
           Tactile sensors were mounted on an ATI Nano17 F/T sensor, and we applied forces using four daily objects with different shapes and materials, 
           including <strong>screwdriver, glue stick, plastic pizza, and a LEGO block</strong>  . 
@@ -355,7 +353,7 @@
 
         <figure>
           <img src="images/19.png" alt="Material">
-          <figcaption><strong style="color:#a00ee4">Daily objects grasping with transferable force sensing and control using GelSight (A-II) and uSkin (3 axis)</strong>. 
+          <figcaption><strong style="color:#a4514f">Daily objects grasping with transferable force sensing and control using GelSight (A-II) and uSkin (3 axis)</strong>. 
             <strong>We transfer the force prediction model to above two sensors by using a third flat-surface vision-based tactile sensor (GelSight, marker pattern A-II) tactile sensor with our GenForce model</strong> . 
             The task requires robot to grasp nine daily objects with different sizes, shapes and material without damage them. 
             Those objects include potato <strong>chip, grape, strawberry, orange, plum, wood block, glue stick, meat box and tea box, 
@@ -367,7 +365,7 @@
 
         <figure>
           <img src="images/20.png" alt="Shape">
-          <figcaption><strong style="color:#a00ee4">Force prediction with dynamic contact events</strong> compared with ATI nano 17 F/T sensor
+          <figcaption><strong style="color:#a4514f">Force prediction with dynamic contact events</strong> compared with ATI nano 17 F/T sensor
           We <strong>evaluated our model in real-time across six transfer groups</strong> under more dynamic conditions (see Supplementary Video 3). 
           Tactile sensors were mounted on an ATI Nano17 F/T sensor, and we applied forces using four daily objects with different shapes and materials, 
           including <strong>screwdriver, glue stick, plastic pizza, and a LEGO block</strong>  . 
@@ -378,7 +376,7 @@
 
         <figure>
           <img src="images/21.png" alt="Material">
-          <figcaption><strong style="color:#a00ee4">Daily objects grasping with transferable force sensing and control using GelSight (A-II) and uSkin (3 axis)</strong>. 
+          <figcaption><strong style="color:#a4514f">Daily objects grasping with transferable force sensing and control using GelSight (A-II) and uSkin (3 axis)</strong>. 
             <strong>We transfer the force prediction model to above two sensors by using a third flat-surface vision-based tactile sensor (GelSight, marker pattern A-II) tactile sensor with our GenForce model</strong> . 
             The task requires robot to grasp nine daily objects with different sizes, shapes and material without damage them. 
             Those objects include potato <strong>chip, grape, strawberry, orange, plum, wood block, glue stick, meat box and tea box, 
@@ -400,7 +398,7 @@
         <h2 class="title is-3 has-text-centered">Applications - Sim2Real Tasks</h2>
         <figure>
           <img src="images/22.png" alt="Shape">
-          <figcaption><strong style="color:#a00ee4">Force prediction with dynamic contact events</strong> compared with ATI nano 17 F/T sensor
+          <figcaption><strong style="color:#a4514f">Force prediction with dynamic contact events</strong> compared with ATI nano 17 F/T sensor
           We <strong>evaluated our model in real-time across six transfer groups</strong> under more dynamic conditions (see Supplementary Video 3). 
           Tactile sensors were mounted on an ATI Nano17 F/T sensor, and we applied forces using four daily objects with different shapes and materials, 
           including <strong>screwdriver, glue stick, plastic pizza, and a LEGO block</strong>  . 

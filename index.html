@@ -221,7 +221,7 @@
         <figure>
           <img src="images/10.png" alt="Bioinspiration">
           <figcaption><strong style="color:#a4514f">Bridging biological and artificial tactile sensing via SimTac:</strong> a simulator for modelling biomorphic vision-based tactile sensors. 
-            Compared with conventional flat-shaped tactile sensors, <strong style="color:#356f8d">biomorphically inspired tactile sensors exhibit enhanced geometric complexity and an extended sensing range</strong>, which imposes increased challenges for simulation modelling.</figcaption>
+            Compared with conventional flat-shaped tactile sensors, <strong>biomorphically inspired tactile sensors exhibit enhanced geometric complexity and an extended sensing range</strong>, which imposes increased challenges for simulation modelling.</figcaption>
         </figure>
       </div>
     </div>
@@ -235,8 +235,8 @@
         <figure>
           <img src="images/11.png" alt="Simulation Framework">
           <figcaption><strong style="color:#a4514f">The simulation framework of SimTac</strong>. 
-            The <strong style="color:#356f8d">input</strong> includes the sensor shape, marker pattern, optical system definition, and material properties. 
-            The <strong style="color:#356f8d">output</strong> consists of optical responses and mechanical responses.</figcaption>
+            The <strong>input</strong> includes the sensor shape, marker pattern, optical system definition, and material properties. 
+            The <strong>output</strong> consists of optical responses and mechanical responses.</figcaption>
         </figure>
       </div>
     </div>
@@ -252,19 +252,18 @@
           <figcaption><strong style="color:#a4514f">The principle of sensor membrane deformation simulation and optical rendering simulation</strong>. 
             Here we use a finger-shaped GelTip sensor as an example. <strong>a-b,</strong>
             The pipeline of the tactile image simulation. We amplify the contact deformation and sparsify the particle density to facilitate easier understanding; 
-            a particle-based iteration method is employed for simulating membrane deformation, while optical rendering is achieved using a light field-based lighting model. 
-            <strong>c},</strong> Offline light field generation. <strong>d,</strong> Real-time online image rendering.
+            <strong>a particle-based iteration method</strong> is employed for <strong>simulating membrane deformation</strong>strong>, while <strong>optical rendering</strong>strong> is achieved using <strong>a light field-based lighting model</strong>. 
+            <strong>c,</strong> Offline light field generation. <strong>d,</strong> Real-time online image rendering.
            </figcaption>
         </figure>
 
         <figure>
           <img src="images/13.png" alt="Force" >
-          <figcaption><strong style="color:#a4514f">Marker-to-marker translation in heterogeneous sensors</strong> shown with images.
-          We <strong>unify three distinct tactile signals into marker representation</strong>. For <strong>electronic sensor arrays</strong>, we develop a <strong>signal-to-marker pipeline</strong>
-          that <strong>converts multichannel raw signals into marker displacement and diameter change</strong>. 
-          Although <strong>some tactile arrays (e.g., capacitive or resistive)</strong> can only measure pressure in each taxel compared to magnetic sensor with 3-axis measurement, 
-          <strong>our model still transfers from vision-based tactile sensors to these arrays</strong>. We verify this by using only the z component of uSkin, referred to as “uSkin (z‑axis)” in <strong>Supplementary Video 3</strong>.
-          We showcase generated images and source images in above figure and the <strong>Supplementary Video 1</strong>.
+          <figcaption><strong style="color:#a4514f">The principle of mechanical response simulation</strong>. 
+            We amplify the contact deformation and sparsify the particle density to facilitate easier understanding; 
+            A Sparse Tensor Network is used to predict force/deformation fields, where the deformation data iterated from the MPM simulation approach serves as input, 
+            while the force/deformation data computed from FEM serves as the ground truth. 
+            This framework enables rapid and accurate mechanical response simulations that approximate FEM-level precision. 
           </figcaption>
         </figure>  
 
